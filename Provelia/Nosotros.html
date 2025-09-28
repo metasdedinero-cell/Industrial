@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Provelia — Nosotros</title>
+  <meta name="description" content="Conoce a Provelia: trayectoria, misión, visión, valores y equipo. Tu reto, nuestra misión.">
+  <meta name="theme-color" content="#37578a">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+
+  <style>
+    :root{
+      --primary:#37578a;
+      --accent:#5b86c6;
+      --muted:#6b7280;
+      --bg:#fafbfd;
+      --radius:12px;
+      --max-width:1200px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:"Poppins",Roboto,sans-serif;color:#0f1724;background:var(--bg)}
+
+    .container{max-width:var(--max-width);margin:0 auto;padding:0 20px}
+
+    /* PRELOADER */
+    #preloader{position:fixed;inset:0;background:#fff;display:flex;align-items:center;justify-content:center;z-index:9999}
+    .spinner{width:70px;height:70px;border:6px solid #eee;border-top-color:var(--primary);border-radius:50%;animation:spin 1s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+
+    /* HEADER / NAV */
+    header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,0.85);backdrop-filter:blur(6px);box-shadow:0 4px 20px rgba(0,0,0,0.05)}
+    .nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
+    .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--primary)}
+    .logo svg{width:44px;height:44px}
+    .logo h3{font-size:1.05rem;margin:0}
+    .logo .small{font-size:0.75rem;color:var(--muted)}
+    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0;align-items:center}
+    nav a{color:#0f1724;text-decoration:none;font-weight:600}
+    .btn-primary{background:var(--primary);color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:700}
+    .btn-outline{border:2px solid var(--primary);padding:8px 14px;border-radius:10px;text-decoration:none;color:var(--primary);font-weight:600}
+    .menu-toggle{display:none;border:none;background:transparent;font-size:1.2rem}
+    @media(max-width:900px){
+      nav ul{display:none;position:fixed;right:20px;top:72px;background:#fff;padding:16px;border-radius:10px;box-shadow:0 8px 30px rgba(0,0,0,0.12)}
+      nav ul.open{display:flex;flex-direction:column;min-width:200px}
+      .menu-toggle{display:block}
+    }
+
+    /* HERO */
+    .hero{min-height:70vh;display:flex;align-items:center;padding:60px 0}
+    .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+    .hero h1{font-size:2.4rem;margin:0 0 12px;color:#07102a}
+    .hero p{color:var(--muted);font-size:1.05rem;line-height:1.5}
+    @media(max-width:900px){.hero-grid{grid-template-columns:1fr}}
+
+    /* Sections */
+    .section{padding:70px 0}
+    h2.section-title{font-size:1.8rem;color:var(--primary);margin-bottom:12px}
+    .muted{color:var(--muted)}
+    .small{font-size:0.9rem}
+
+    /* Timeline */
+    .timeline{display:flex;gap:20px;flex-wrap:wrap}
+    .step{flex:1;min-width:200px;background:#fff;padding:20px;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.06);transition:.3s}
+    .step:hover{transform:translateY(-5px)}
+
+    /* Mission / Vision / Values */
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+    .card{background:#fff;padding:20px;border-radius:12px;box-shadow:0 6px 25px rgba(0,0,0,0.06);transition:.3s}
+    .card:hover{transform:translateY(-6px)}
+    .card h3{margin-top:0;color:var(--primary)}
+
+    /* Team */
+    .team{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+    .member{background:#fff;border-radius:12px;box-shadow:0 6px 25px rgba(0,0,0,0.06);padding:20px;text-align:center}
+    .member img{width:100%;height:220px;object-fit:cover;border-radius:10px;margin-bottom:12px}
+    .member h4{margin:0;color:#07102a}
+    .member p{margin:0;color:var(--muted);font-size:0.9rem}
+
+    /* CTA */
+    .cta-band{background:var(--primary);color:#fff;padding:30px;border-radius:14px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .cta-band h3{margin:0}
+
+    /* FOOTER */
+    footer{padding:40px 0;background:#07102a;color:#fff;margin-top:40px}
+    footer .fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+    footer a{color:#fff;text-decoration:none}
+    .social{display:flex;gap:10px}
+
+    /* WhatsApp */
+    .whatsapp{position:fixed;right:20px;bottom:20px;background:#25D366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 10px 30px rgba(0,0,0,0.15);z-index:1000}
+  </style>
+</head>
+<body>
+
+  <!-- PRELOADER -->
+  <div id="preloader"><div class="spinner"></div></div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container nav-wrap">
+      <a href="index.html" class="logo" aria-label="Inicio - Provelia">
+        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="64" height="64" rx="12" fill="var(--primary)"/><path d="M18 40 L30 22 L46 40" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div>
+          <h3>Provelia</h3>
+          <div class="small muted">Distribución y soluciones</div>
+        </div>
+      </a>
+      <nav aria-label="Navegación principal">
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+        <ul id="mainMenu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="cotizaciones.html" class="btn-primary">Cotizaciones</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero container">
+      <div class="hero-grid">
+        <div data-aos="fade-right">
+          <h1>Provelia</h1>
+          <h3 style="color:var(--primary)">Tu reto, nuestra misión</h3>
+          <p>Somos una empresa dedicada a ofrecer soluciones de distribución, logística y servicios integrales. Nuestro compromiso es transformar tus desafíos en oportunidades, brindándote confianza y resultados medibles.</p>
+        </div>
+        <div data-aos="fade-left">
+          <img src="https://picsum.photos/600/400?random=21" alt="Provelia equipo" style="width:100%;border-radius:12px;box-shadow:0 20px 40px rgba(0,0,0,0.08)">
+        </div>
+      </div>
+    </section>
+
+    <!-- TRAYECTORIA -->
+    <section class="section container">
+      <h2 class="section-title" data-aos="fade-up">Nuestra Trayectoria</h2>
+      <div class="timeline">
+        <div class="step" data-aos="fade-up"><strong>2015</strong><p class="muted small">Fundación de Provelia con enfoque en soluciones locales.</p></div>
+        <div class="step" data-aos="fade-up" data-aos-delay="100"><strong>2018</strong><p class="muted small">Expansión nacional y optimización logística.</p></div>
+        <div class="step" data-aos="fade-up" data-aos-delay="200"><strong>2022</strong><p class="muted small">Integración de plataformas digitales para trazabilidad.</p></div>
+        <div class="step" data-aos="fade-up" data-aos-delay="300"><strong>Hoy</strong><p class="muted small">Un equipo consolidado y clientes en múltiples sectores.</p></div>
+      </div>
+    </section>
+
+    <!-- MISION / VISION / VALORES -->
+    <section class="section container">
+      <h2 class="section-title" data-aos="fade-up">Nuestra Esencia</h2>
+      <div class="cards">
+        <div class="card" data-aos="zoom-in"><h3>Misión</h3><p class="muted">Brindar soluciones confiables y eficientes que impulsen el crecimiento de nuestros clientes, garantizando calidad y compromiso en cada proyecto.</p></div>
+        <div class="card" data-aos="zoom-in" data-aos-delay="100"><h3>Visión</h3><p class="muted">Ser la comercializadora de referencia en el país, reconocida por su innovación, servicio al cliente y excelencia operativa.</p></div>
+        <div class="card" data-aos="zoom-in" data-aos-delay="200"><h3>Valores</h3><ul class="muted small"><li>✅ Compromiso</li><li>✅ Innovación</li><li>✅ Transparencia</li><li>✅ Responsabilidad</li><li>✅ Trabajo en equipo</li></ul></div>
+      </div>
+    </section>
+
+    <!-- EQUIPO -->
+    <section class="section container">
+      <h2 class="section-title" data-aos="fade-up">Nuestro Equipo</h2>
+      <div class="team">
+        <div class="member" data-aos="fade-up">
+          <img src="https://picsum.photos/300/300?random=31" alt="Miembro 1">
+          <h4>Nombre Apellido</h4><p>Director General</p>
+        </div>
+        <div class="member" data-aos="fade-up" data-aos-delay="100">
+          <img src="https://picsum.photos/300/300?random=32" alt="Miembro 2">
+          <h4>Nombre Apellido</h4><p>Gerente de Operaciones</p>
+        </div>
+        <div class="member" data-aos="fade-up" data-aos-delay="200">
+          <img src="https://picsum.photos/300/300?random=33" alt="Miembro 3">
+          <h4>Nombre Apellido</h4><p>Atención al Cliente</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLIENTES -->
+    <section class="section container">
+      <h2 class="section-title" data-aos="fade-up">Nuestros Aliados</h2>
+      <p class="muted small" data-aos="fade-up">Algunas de las empresas que han confiado en Provelia:</p>
+      <div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center;justify-content:center;margin-top:20px">
+        <div style="width:120px;height:60px;background:#fff;border-radius:8px;box-shadow:0 4px 15px rgba(0,0,0,0.05)" data-aos="zoom-in"></div>
+        <div style="width:120px;height:60px;background:#fff;border-radius:8px;box-shadow:0 4px 15px rgba(0,0,0,0.05)" data-aos="zoom-in" data-aos-delay="100"></div>
+        <div style="width:120px;height:60px;background:#fff;border-radius:8px;box-shadow:0 4px 15px rgba(0,0,0,0.05)" data-aos="zoom-in" data-aos-delay="200"></div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="section container">
+      <div class="cta-band" data-aos="fade-up">
+        <h3>¿Listo para trabajar con Provelia?</h3>
+        <a href="cotizaciones.html" class="btn-outline">Solicitar cotización</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:flex-start">
+      <div style="flex:1;min-width:220px">
+        <a href="index.html" style="text-decoration:none;color:inherit;display:flex;gap:12px;align-items:center">
+          <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#fff"/><path d="M18 40 L30 22 L46 40" fill="none" stroke="#37578a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div>
+            <strong>Comercializadora</strong>
+            <div class="small muted">Distribución y soluciones</div>
+          </div>
+        </a>
+        <p class="muted small" style="margin-top:12px">Dirección ficticia • Ciudad • País<br>Tel: +52 81 0000 0000 • contacto@comercializadora.com</p>
+      </div>
+
+      <div style="flex:1;min-width:160px">
+        <h4>Enlaces</h4>
+        <ul style="list-style:none;padding:0;margin:0">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="cotizaciones.html">Cotizaciones</a></li>
+        </ul>
+      </div>
+
+      <div style="flex:1;min-width:200px">
+        <!-- Espacio en blanco donde estaba Suscríbete -->
+      </div>
+
+    </div>
+
+    <div style="margin-top:20px;border-top:1px solid rgba(255,255,255,0.06);padding-top:16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+      <div class="muted small">© "Comercializadora" — Todos los derechos reservados</div>
+      <div class="social">
+        <a href="#" style="color:#fff;text-decoration:none" aria-label="LinkedIn">in</a>
+        <a href="#" style="color:#fff;text-decoration:none" aria-label="Facebook">fb</a>
+        <a href="#" style="color:#fff;text-decoration:none" aria-label="Instagram">ig</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <!-- WhatsApp -->
+  <a class="whatsapp" href="https://wa.me/521XXXXXXXXXX" target="_blank">💬</a>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    window.addEventListener('load',function(){document.getElementById('preloader').style.opacity='0';setTimeout(()=>document.getElementById('preloader').remove(),600)});
+    AOS.init({once:true,duration:800,easing:'ease-out-cubic'});
+    const menuToggle=document.getElementById('menuToggle');
+    const mainMenu=document.getElementById('mainMenu');
+    menuToggle && menuToggle.addEventListener('click',()=>{mainMenu.classList.toggle('open');});
+  </script>
+</body>
+</html>

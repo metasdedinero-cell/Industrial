@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Catálogo de Productos Industriales – Provelia</title>
+    <meta name="description" content="Catálogo completo de productos industriales – EPP, Uniformes, Limpieza, Herramientas y Materiales.">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <style>
+        :root{ --primary:#37578a; --accent:#f0c040; --muted:#6b7280; --bg:#fafbfd; --radius:12px; --max-width:1200px; } body{margin:0;font-family:"Poppins",Roboto,sans-serif;background:var(--bg);color:#0f1724;scroll-behavior:smooth;} a{text-decoration:none;color:var(--primary);transition:0.3s;} a:hover{color:var(--accent);} .container{max-width:var(--max-width);margin:0 auto;padding:20px} /* HEADER */ header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,0.95);backdrop-filter:blur(6px);box-shadow:0 6px 18px rgba(15,23,36,0.06);} .nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:12px 20px} .logo{display:flex;align-items:center;gap:10px;color:var(--primary)} .logo h3{margin:0;font-size:1.05rem} nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0;align-items:center} nav a{font-weight:600} .menu-toggle{display:none;border:none;background:transparent;font-size:1.2rem} @media(max-width:900px){ nav ul{display:none;position:fixed;right:20px;top:72px;background:#fff;padding:16px;border-radius:10px;box-shadow:0 8px 30px rgba(15,23,36,0.12)} nav ul.open{display:flex;flex-direction:column;min-width:200px} .menu-toggle{display:block} } /* HERO */ .hero{background:linear-gradient(180deg,#fff,#f0f4f8);padding:60px 20px;border-radius:16px;margin-bottom:30px;text-align:center;overflow:hidden;} .hero h1{font-size:2.2rem;margin-bottom:12px;line-height:1.2;color:#07102a} .hero p{font-size:1.05rem;margin-bottom:20px;color:var(--muted)} .hero .btn-primary{font-size:1rem;} /* CATEGORÍAS */ .category{margin-bottom:40px} .category h2{font-size:1.6rem;margin-bottom:16px;color:var(--primary)} /* GRID DE PRODUCTOS */ .products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px} /* TARJETAS DE PRODUCTO */ .product-card{background:#fff;border-radius:var(--radius);padding:16px;box-shadow:0 6px 20px rgba(0,0,0,0.08);transition:all 0.3s ease;display:flex;flex-direction:column;justify-content:space-between} .product-card img{border-radius:8px;object-fit:cover;height:160px;width:100%;margin-bottom:12px;} .product-card:hover{transform:translateY(-6px);box-shadow:0 12px 28px rgba(0,0,0,0.12)} .product-card h3{margin:0 0 10px 0;font-size:1.05rem;color:var(--primary)} .product-card p{margin:0 0 10px 0;color:var(--muted);font-size:0.95rem} .product-card .btn-primary{margin-top:auto;padding:8px 12px;background:var(--primary);color:#fff;border-radius:8px;text-align:center;display:inline-block;font-weight:600;} .product-card .btn-primary:hover{background:var(--accent);color:#07102a;} /* FOOTER */ footer{padding:40px 20px;background:#07102a;color:#fff;margin-top:40px} footer a{color:#fff} footer ul{list-style:none;padding:0;margin:0} footer ul li{margin-bottom:8px} /* Animación fade */ [data-aos]{opacity:0;transition-property:transform, opacity;}
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container nav-wrap">
+            <!-- Logo -->
+            <a href="index.html" class="logo" aria-label="Inicio - Comercializadora"> <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"> <rect width="64" height="64" rx="12" fill="var(--primary)"/> <path d="M18 40 L30 22 L46 40" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/> </svg>
+                <div>
+                    <h3>Comercializadora</h3>
+                    <div class="small muted">Distribución y soluciones</div>
+                </div>
+            </a>
+            <!-- Navegación -->
+            <nav aria-label="Navegación principal"> <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+                <ul id="mainMenu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="cotizaciones.html" class="btn-primary">Cotizaciones</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <!-- HERO -->
+        <div class="hero" data-aos="fade-down">
+            <h1>Catálogo de Productos Industriales</h1>
+            <p>Explora nuestras categorías y encuentra los productos industriales que necesitas.</p> <a href="cotizaciones.html" class="btn-primary">Solicitar Cotización</a> </div>
+        <!-- 1. EPP -->
+        <div class="category" data-aos="fade-up">
+            <h2>1. Equipos de Protección Personal (EPP)</h2>
+            <div class="products-grid">
+                <div class="product-card" data-aos="zoom-in"> <img src="casco.jpg" alt="Casco de seguridad">
+                    <h3>Cascos de seguridad</h3>
+                    <p>Protege tu cabeza con cascos resistentes y certificados.</p> <a href="cotizaciones.html" class="btn-primary">Cotizar</a> </div>
+                <div class="product-card" data-aos="zoom-in" data-aos-delay="50"> <img src="guantes.jpg" alt="Guantes de seguridad">
+                    <h3>Guantes (piel, carnaza, anticorte)</h3>
+                    <p>Máxima protección para tus manos en cualquier tarea industrial.</p> <a href="cotizaciones.html" class="btn-primary">Cotizar</a> </div>
+                <div class="product-card" data-aos="zoom-in" data-aos-delay="100"> <img src="chaleco.jpg" alt="Chalecos reflejantes">
+                    <h3>Chalecos reflejantes</h3>
+                    <p>Visibilidad garantizada para trabajos en altura o zonas oscuras.</p> <a href="cotizaciones.html" class="btn-primary">Cotizar</a> </div>
+                <div class="product-card" data-aos="zoom-in" data-aos-delay="150"> <img src="zapato.jpg" alt="Botas con casquillo">
+                    <h3>Botas con casquillo</h3>
+                    <p>Comodidad y seguridad en cada paso que das.</p> <a href="cotizaciones.html" class="btn-primary">Cotizar</a> </div>
+                <div class="product-card" data-aos="zoom-in" data-aos-delay="200"> <img src="lentes.jpg" alt="Lentes de seguridad">
+                    <h3>Lentes de seguridad</h3>
+                    <p>Protege tus ojos de partículas y radiación UV industrial.</p> <a href="cotizaciones.html" class="btn-primary">Cotizar</a> </div>
+                <div class="product-card" data-aos="zoom-in" data-aos-delay="250"> <img src="audifonos.jpg" alt="Tapones auditivos">
+                    <h3>Tapones auditivos y orejeras</h3>
+                    <p>Protección auditiva para ambientes ruidosos y seguros.</p> <a href="cotizaciones.html" class="btn-primary">Cotizar</a> </div>
+                <div class="product-card" data-aos="zoom-in" data-aos-delay="300"> <img src="soldador.jpg" alt="Careta de soldador">
+                    <h3>Caretas de soldador</h3>
+                    <p>Protege tu rostro y ojos durante procesos de soldadura.</p> <a href="cotizaciones.html" class="btn-primary">Cotizar</a> </div>
+                <div class="product-card" data-aos="zoom-in" data-aos-delay="350"> <img src="respirador.jpg" alt="Mascarillas industriales">
+                    <h3>Mascarillas industriales</h3>
+                    <p>Filtración y respirabilidad para ambientes con polvo y químicos.</p> <a href="cotizaciones.html" class="btn-primary">Cotizar</a> </div>
+                <div class="product-card" data-aos="zoom-in" data-aos-delay="400"> <img src="arneses.jpg" alt="Arnés de seguridad">
+                    <h3>Arneses de seguridad</h3>
+                    <p>Para trabajos en altura, garantizando estabilidad y seguridad.</p> <a href="cotizaciones.html" class="btn-primary">Cotizar</a> </div>
+                <div class="product-card" data-aos="zoom-in" data-aos-delay="450"> <img src="ignifugo.jpg" alt="Ropa ignífuga">
+                    <h3>Ropa ignífuga</h3>
+                    <p>Protección contra fuego y chispas en trabajos industriales.</p> <a href="cotizaciones.html" class="btn-primary">Cotizar</a> </div>
+            </div>
+        </div>
+        <!-- 2. Uniformes Industriales -->
+        <div class="category" data-aos="fade-up" data-aos-delay="100">
+            <h2>2. Uniformes Industriales</h2>
+            <div class="products-grid">
+                <div class="product-card" data-aos="zoom-in"> <img src="camiseta.webp" alt="Camisas industriales">
+                    <h3>Camisas industriales con logotipo</h3>
+                    <p>Uniformes corporativos cómodos y personalizados.</p> <a href="cotizaciones.html" class="btn-primary">Cotizar</a> </div>
+                <div class="product-card" data-aos="zoom-in" data-aos-delay="50"> <img src="overol.webp" alt="Overoles">
+                    <h3>Overoles de trabajo</h3>
+                    <p>Durabilidad y resistencia para tareas industriales exigentes.</p> <a href="cotizaciones.html" class="btn-primary">Cotizar</a> </div>
+                <div class="product-card" data-aos="zoom-in" data-aos-delay="100"> <img src="chalequito.jpeg" alt="Chalecos bordados">
+                    <h3>Chalecos bordados</h3>
+                    <p>Uniformes elegantes y visibles para tu equipo de trabajo.</p> <a href="cotizaciones.html" class="btn-primary">Cotizar</a> </div>
+                <div class="product-card" data-aos="zoom-in" data-aos-delay="150"> <img src="polo.webp" alt="Playeras tipo polo">
+                    <h3>Playeras tipo polo</h3>
+                    <p>Comodidad y estilo corporativo para uso diario.</p> <a href="cotizaciones.html" class="btn-primary">Cotizar</a> </div>
+                <div class="product-card" data-aos="zoom-in" data-aos-delay="200"> <img src="pantalon.webp" alt="Pantalones industriales">
+                    <h3>Pantalones industriales</h3>
+                    <p>Resistentes y cómodos para largas jornadas de trabajo.</p> <a href="cotizaciones.html" class="btn-primary">Cotizar</a> </div>
+                <div class="product-card" data-aos="zoom-in" data-aos-delay="250"> <img src="sueter.png" alt="Chaquetas corporativas">
+                    <h3>Chaquetas corporativas</h3>
+                    <p>Protección y visibilidad para tus colaboradores en todo momento.</p> <a href="cotizaciones.html" class="btn-primary">Cotizar</a> </div>
+                <div class="product-card" data-aos="zoom-in" data-aos-delay="300"> <img src="sombrero.webp" alt="Gorros industriales">
+                    <h3>Gorros industriales</h3>
+                    <p>Comodidad y seguridad para todo tipo de trabajo.</p> <a href="cotizaciones.html" class="btn-primary">Cotizar</a> </div>
+                <div class="product-card" data-aos="zoom-in" data-aos-delay="350"> <img src="impermeable.jpg" alt="Ropa impermeable">
+                    <h3>Ropa impermeable</h3>
+                    <p>Protección contra agua y humedad en ambientes de trabajo.</p> <a href="cotizaciones.html" class="btn-primary">Cotizar</a> </div>
+                <div class="product-card" data-aos="zoom-in" data-aos-delay="400"> <img src="bota.jpg" alt="Calzado industrial">
+                    <h3>Calzado industrial</h3>
+                    <p>Seguridad y comodidad para todo tipo de tareas pesadas.</p> <a href="cotizaciones.html" class="btn-primary">Cotizar</a> </div>
+            </div>
+        </div>
+        <!-- 3. Limpieza Industrial -->
+        <div class="category" data-aos="fade-up" data-aos-delay="200">
+            <h2>3. Limpieza Industrial</h2>
+            <div class="products-grid">
+                <div class="product-card" data-aos="zoom-in"> <img src="rollo.webp" alt="Papel industrial">
+                    <h3>Papel industrial (toallas, jumbo)</h3>
+                    <p>Material absorbente de alta calidad para tu empresa.</p> <a href="cotizaciones.html" class="btn-primary">Cotizar</a> </div>
+                <div class="product-card" data-aos="zoom-in" data-aos-delay="50"> <img src="desinfectante.jpeg" alt="Detergentes industriales">
+                    <h3>Detergentes y desinfectantes</h3>
+                    <p>Limpieza profunda y segura para cualquier superficie.</p> <a href="cotizaciones.html" class="btn-primary">Cotizar</a> </div>
+                <div class="product-card" data-aos="zoom-in" data-aos-delay="100"> <img src="cubotrapeador.jpg" alt="Cubetas y mopas">
+                    <h3>Cubetas, mopas y accesorios</h3>
+                    <p>Todo lo necesario para mantener instalaciones impecables.</p> <a href="cotizaciones.html" class="btn-primary">Cotizar</a> </div>
+                <div class="product-card" data-aos="zoom-in" data-aos-delay="150"> <img src="trapeador.jpg" alt="Trapeadores y escobas">
+                    <h3>Trapeadores y escobas</h3>
+                    <p>Equipos durables para limpieza eficiente y segura.</p> <a href="cotizaciones.html" class="btn-primary">Cotizar</a> </div>
+                <div class="product-card" data-aos="zoom-in" data-aos-delay="200"> <img src="quimico.webp" alt="Productos químicos">
+                    <h3>Productos químicos especializados</h3>
+                    <p>Soluciones efectivas para limpieza industrial avanzada.</p> <a href="cotizaciones.html" class="btn-primary">Cotizar</a> </div>
+            </div>
+        </div>
+        <!-- 4. Herramientas y Refacciones -->
+        <div class="category" data-aos="fade-up" data-aos-delay="300">
+            <h2>4. Herramientas y Refacciones</h2>
+            <div class="products-grid">
+                <div class="product-card" data-aos="zoom-in"> <img src="taladro.jpg" alt="Taladros">
+                    <h3>Taladros y esmeriles</h3>
+                    <p>Herramientas potentes para cualquier tipo de trabajo.</p> <a href="cotizaciones.html" class="btn-primary">Cotizar</a> </div>
+                <div class="product-card" data-aos="zoom-in" data-aos-delay="50"> <img src="destornillador.webp" alt="Llaves y destornilladores">
+                    <h3>Llaves, destornilladores y kits</h3>
+                    <p>Herramientas básicas y profesionales para mantenimiento.</p> <a href="cotizaciones.html" class="btn-primary">Cotizar</a> </div>
+                <div class="product-card" data-aos="zoom-in" data-aos-delay="100"> <img src="refaccion.jpg" alt="Refacciones mecánicas">
+                    <h3>Refacciones mecánicas</h3>
+                    <p>Calidad y precisión para mantener tus equipos en óptimas condiciones.</p> <a href="cotizaciones.html" class="btn-primary">Cotizar</a> </div>
+                <div class="product-card" data-aos="zoom-in" data-aos-delay="150"> <img src="electrico.jpeg" alt="Accesorios eléctricos">
+                    <h3>Accesorios eléctricos</h3>
+                    <p>Conexiones y componentes confiables para instalaciones seguras.</p> <a href="cotizaciones.html" class="btn-primary">Cotizar</a> </div>
+            </div>
+        </div>
+        <!-- 5. Materiales Industriales -->
+        <div class="category" data-aos="fade-up" data-aos-delay="400">
+            <h2>5. Materiales Industriales</h2>
+            <div class="products-grid">
+                <div class="product-card" data-aos="zoom-in"> <img src="aceite.jpg" alt="Lubricantes">
+                    <h3>Lubricantes y aceites</h3>
+                    <p>Calidad y protección para tus maquinarias.</p> <a href="cotizaciones.html" class="btn-primary">Cotizar</a> </div>
+                <div class="product-card" data-aos="zoom-in" data-aos-delay="50"> <img src="tubo.jpg" alt="Metales y tuberías">
+                    <h3>Metales y tuberías</h3>
+                    <p>Material resistente para construcción y mantenimiento industrial.</p> <a href="cotizaciones.html" class="btn-primary">Cotizar</a> </div>
+                <div class="product-card" data-aos="zoom-in" data-aos-delay="100"> <img src="rodamiento.jpeg" alt="Rodamientos y cojinetes">
+                    <h3>Rodamientos y cojinetes</h3>
+                    <p>Componentes precisos para maquinaria confiable y duradera.</p> <a href="cotizaciones.html" class="btn-primary">Cotizar</a> </div>
+                <div class="product-card" data-aos="zoom-in" data-aos-delay="150"> <img src="aros.jpg" alt="Sellos y empaques">
+                    <h3>Sellos y empaques industriales</h3>
+                    <p>Previenen fugas y garantizan eficiencia en tus equipos.</p> <a href="cotizaciones.html" class="btn-primary">Cotizar</a> </div>
+            </div>
+        </div>
+    </div>
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div style="display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:flex-start">
+                <div style="flex:1;min-width:220px">
+                    <a href="index.html" style="text-decoration:none;color:inherit;display:flex;gap:12px;align-items:center"> <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#fff"/><path d="M18 40 L30 22 L46 40" fill="none" stroke="#37578a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <div> <strong>Comercializadora</strong>
+                            <div class="small muted">Distribución y soluciones</div>
+                        </div>
+                    </a>
+                    <p class="muted small" style="margin-top:12px">Dirección ficticia • Ciudad • País<br>Tel: +52 81 0000 0000 • contacto@comercializadora.com</p>
+                </div>
+                <div style="flex:1;min-width:160px">
+                    <h4>Enlaces</h4>
+                    <ul style="list-style:none;padding:0;margin:0">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="cotizaciones.html">Cotizaciones</a></li>
+                    </ul>
+                </div>
+                <div style="flex:1;min-width:200px">
+                    <!-- Espacio en blanco donde estaba Suscríbete -->
+                </div>
+            </div>
+            <div style="margin-top:20px;border-top:1px solid rgba(255,255,255,0.06);padding-top:16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+                <div class="muted small">© "Comercializadora" — Todos los derechos reservados</div>
+                <div class="social"> <a href="#" style="color:#fff;text-decoration:none" aria-label="LinkedIn">in</a> <a href="#" style="color:#fff;text-decoration:none" aria-label="Facebook">fb</a> <a href="#" style="color:#fff;text-decoration:none" aria-label="Instagram">ig</a> </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({once:true,duration:700,easing:'ease-out-cubic'}); // Mobile Menu const menuToggle=document.getElementById('menuToggle'); const mainMenu=document.getElementById('mainMenu'); menuToggle&&menuToggle.addEventListener('click',()=>{mainMenu.classList.toggle('open');});
+    </script>
+</body>
+</html>

@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Comercializadora — Inicio</title>
+  <meta name="description" content="Comercializadora profesional — distribución, logística y soluciones. Pide cotizaciones, conoce nuestros productos y descubre por qué confiar en nosotros.">
+  <meta name="theme-color" content="#37578a">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- AOS (Animate on Scroll) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-GY8X7C6qOq0Qq3zZk0vWr+g8k7Y4oJQw1dZtq+u5E1eGg3Qf+4f8+8Qm6zK1BEp9m7z9g3a2V9s7j1xFvY3m3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    :root{
+      --primary: #37578a; /* tu color pedido para h3 y elementos */
+      --accent: #f0c040;
+      --muted: #6b7280;
+      --bg: #fafbfd;
+      --glass: rgba(255,255,255,0.6);
+      --radius: 12px;
+      --max-width: 1200px;
+    }
+    /* RESET */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Poppins", Roboto, sans-serif;
+      color:#0f1724;
+      background:var(--bg);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* Container */
+    .container{max-width:var(--max-width);margin:0 auto;padding:0 20px}
+
+    /* PRELOADER */
+    #preloader{position:fixed;inset:0;background:linear-gradient(180deg,#fff,#f6fafc);display:flex;align-items:center;justify-content:center;z-index:9999}
+    .spinner{width:72px;height:72px;border-radius:50%;border:6px solid #eee;border-top-color:var(--primary);animation:spin 1s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+
+    /* HEADER / NAV */
+    header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,0.85);backdrop-filter:blur(6px);box-shadow:0 6px 18px rgba(15,23,36,0.06)}
+    .nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
+    .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--primary)}
+    .logo svg{width:44px;height:44px}
+    .logo h3{font-size:1.05rem;margin:0}
+
+    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0;align-items:center}
+    nav a{color:#0f1724;text-decoration:none;font-weight:600}
+    .btn-primary{background:var(--primary);color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:700}
+    .btn-outline{border:2px solid var(--primary);padding:8px 14px;border-radius:10px;text-decoration:none;color:var(--primary);font-weight:600}
+
+    /* Responsive nav */
+    .menu-toggle{display:none;border:none;background:transparent;font-size:1.2rem}
+    @media (max-width:900px){
+      nav ul{display:none;position:fixed;right:20px;top:72px;background:#fff;padding:16px;border-radius:10px;box-shadow:0 8px 30px rgba(15,23,36,0.12)}
+      nav ul.open{display:flex;flex-direction:column;min-width:200px}
+      .menu-toggle{display:block}
+    }
+
+    /* HERO */
+    .hero{min-height:80vh;display:flex;align-items:center}
+    .hero-grid{display:grid;grid-template-columns:1fr 460px;gap:40px;align-items:center;width:100%}
+    .hero-copy h1{font-size:2.6rem;line-height:1.05;margin-bottom:12px;color:#07102a}
+    .hero-copy p{color:var(--muted);margin-bottom:20px;font-size:1.05rem}
+    .hero-ctas{display:flex;gap:12px}
+    .hero-illustration{border-radius:16px;overflow:hidden;box-shadow:0 20px 50px rgba(15,23,36,0.08)}
+    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,0.5),rgba(255,255,255,0.2));padding:20px}
+
+    /* Small features row under hero */
+    .features{display:flex;gap:18px;justify-content:space-between;margin-top:28px}
+    .feature{flex:1;background:#fff;padding:14px;border-radius:12px;display:flex;gap:12px;align-items:center;box-shadow:0 6px 24px rgba(15,23,36,0.06)}
+    .feature h4{margin:0;font-size:0.95rem}
+    .feature p{margin:0;color:var(--muted);font-size:0.9rem}
+
+    /* PRODUCTS */
+    .section{padding:64px 0}
+    h2.section-title{font-size:1.5rem;color:var(--primary);margin-bottom:18px}
+    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 14px 40px rgba(15,23,36,0.06);display:flex;flex-direction:column}
+    .card img{width:100%;height:170px;object-fit:cover}
+    .card-body{padding:16px;flex:1;display:flex;flex-direction:column}
+    .card-body h3{margin:0 0 8px 0;font-size:1.05rem;color:#07102a}
+    .card-body p{flex:1;color:var(--muted);font-size:0.95rem}
+    .card-footer{padding:12px 16px;display:flex;justify-content:space-between;align-items:center}
+    .tag{background:var(--primary);color:#fff;padding:6px 10px;border-radius:8px;font-weight:700}
+
+    /* About / Timeline */
+    .timeline{display:flex;gap:18px;align-items:center}
+    .timeline .step{background:#fff;padding:18px;border-radius:12px;box-shadow:0 8px 30px rgba(15,23,36,0.06);flex:1}
+
+    /* Testimonials */
+    .testimonials{background:linear-gradient(180deg,#fff, #f7fbfd);padding:36px;border-radius:16px}
+    .testimonial{display:flex;gap:12px;align-items:flex-start}
+    .avatar{width:64px;height:64px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,var(--primary),#5b86c6);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+    .quote{font-style:italic;color:var(--muted)}
+
+    /* CTA band */
+    .cta-band{background:var(--primary);color:#fff;padding:28px;border-radius:14px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .cta-band h3{margin:0}
+
+    /* FOOTER */
+    footer{padding:40px 0;margin-top:30px;background:#07102a;color:#fff}
+    footer .fgrid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:20px}
+    footer a{color:inherit;text-decoration:none}
+    footer .social{display:flex;gap:10px}
+
+    /* Floating WhatsApp */
+    .whatsapp{position:fixed;right:20px;bottom:20px;background:#25D366;color:#fff;border-radius:50%;width:56px;height:56px;display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 10px 30px rgba(37,211,102,0.25);z-index:999}
+
+    /* Back to top */
+    .to-top{position:fixed;right:20px;bottom:92px;background:#111827;color:#fff;padding:10px 12px;border-radius:10px;display:none}
+
+    /* Responsive adjustments */
+    @media (max-width:1200px){.grid{grid-template-columns:repeat(3,1fr)} .hero-grid{grid-template-columns:1fr 360px}}
+    @media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)} .hero-copy h1{font-size:2rem} .hero-grid{grid-template-columns:1fr} .features{flex-direction:column}}
+    @media (max-width:520px){.grid{grid-template-columns:1fr} nav a{font-size:0.95rem}}
+
+    /* small helpers */
+    .muted{color:var(--muted)}
+    .small{font-size:0.9rem}
+    h3{color:var(--primary)}
+    /* ensure h3 color requested */
+    h3.section-sub{color:var(--primary)}
+
+  </style>
+</head>
+<body>
+
+  <!-- PRELOADER -->
+  <div id="preloader" aria-hidden="true">
+    <div class="spinner" role="status" aria-label="Cargando"></div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container nav-wrap">
+      <a href="index.html" class="logo" aria-label="Inicio - Comercializadora">
+        <!-- simple SVG logo -->
+        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="64" height="64" rx="12" fill="var(--primary)"/><path d="M18 40 L30 22 L46 40" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div>
+          <h3>Provelia</h3>
+          <div class="small muted">Distribución y soluciones</div>
+        </div>
+      </a>
+
+      <nav aria-label="Navegación principal">
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+        <ul id="mainMenu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="cotizaciones.html" class="btn-primary">Cotizaciones</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero-grid">
+
+        <div class="hero-copy" data-aos="fade-up">
+          <h1 id="hero-title">Conectamos productos. Entregamos soluciones.</h1>
+          <p class="muted">Distribución confiable, logística optimizada y atención personalizada para empresas de todos los tamaños. Entregas a tiempo, trazabilidad total y soporte dedicado.</p>
+
+          <div class="hero-ctas">
+            <a href="cotizaciones.html" class="btn-primary" aria-label="Solicitar cotización">Solicitar cotización</a>
+            <a href="productos.html" class="btn-outline" aria-label="Ver productos">Ver productos</a>
+          </div>
+
+          <!-- features small row -->
+          <div class="features" style="margin-top:22px">
+            <div class="feature" data-aos="fade-right">
+              <div>
+                <strong>Envíos nacionales</strong>
+                <p class="small muted">Cobertura en todo el país con entregas rápidas.</p>
+              </div>
+            </div>
+            <div class="feature" data-aos="fade-up">
+              <div>
+                <strong>Soporte Dedicado</strong>
+                <p class="small muted">Gerente de cuenta y respuesta en 24 hrs.</p>
+              </div>
+            </div>
+            <div class="feature" data-aos="fade-left">
+              <div>
+                <strong>Gestión de inventario</strong>
+                <p class="small muted">Control y visibilidad en tiempo real.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-illustration" data-aos="fade-left">
+          <div class="hero-card">
+            <img src="https://picsum.photos/720/480?random=12" alt="Equipo y logística" style="width:100%;display:block;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
+              <div>
+                <h4 style="margin:0">Servicios integrales</h4>
+                <div class="small muted">Logística • Almacenaje • Distribución</div>
+              </div>
+              <div class="tag">Confianza</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PRODUCTS TEASER -->
+    <section class="section container" aria-labelledby="productos-title">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+        <div>
+          <h2 class="section-title">Productos destacados</h2>
+          <div class="muted small">Explora una selección de lo que ofrecemos</div>
+        </div>
+        <a href="productos.html" class="small btn-outline">Ver catálogo completo</a>
+      </div>
+
+      <div class="grid" data-aos="fade-up">
+        <!-- Card 1 -->
+        <article class="card">
+          <img src="https://picsum.photos/seed/p1/600/350" alt="Producto 1">
+          <div class="card-body">
+            <h3>Producto 1</h3>
+            <p class="muted">Descripción breve del producto 1. Características principales y uso habitual.</p>
+          </div>
+          <div class="card-footer">
+            <div class="small muted">Desde $—</div>
+            <a href="cotizaciones.html" class="btn-primary">Cotizar</a>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card">
+          <img src="https://picsum.photos/seed/p2/600/350" alt="Producto 2">
+          <div class="card-body">
+            <h3>Producto 2</h3>
+            <p class="muted">Breve descripción del producto 2, tamaño, presentación y garantía si aplica.</p>
+          </div>
+          <div class="card-footer">
+            <div class="small muted">Desde $—</div>
+            <a href="cotizaciones.html" class="btn-primary">Cotizar</a>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card">
+          <img src="https://picsum.photos/seed/p3/600/350" alt="Producto 3">
+          <div class="card-body">
+            <h3>Producto 3</h3>
+            <p class="muted">Descripción corta del producto 3, público objetivo y notas relevantes.</p>
+          </div>
+          <div class="card-footer">
+            <div class="small muted">Desde $—</div>
+            <a href="cotizaciones.html" class="btn-primary">Cotizar</a>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="card">
+          <img src="https://picsum.photos/seed/p4/600/350" alt="Producto 4">
+          <div class="card-body">
+            <h3>Producto 4</h3>
+            <p class="muted">Breve nota: variantes, cantidad mínima o paquete comercial.</p>
+          </div>
+          <div class="card-footer">
+            <div class="small muted">Desde $—</div>
+            <a href="cotizaciones.html" class="btn-primary">Cotizar</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ABOUT / TIMELINE -->
+    <section class="section container" aria-labelledby="nosotros-title">
+      <div style="display:flex;gap:36px;align-items:center;flex-wrap:wrap">
+        <div style="flex:1;min-width:280px" data-aos="fade-right">
+          <h2 class="section-title">Nosotros</h2>
+          <h3 class="section-sub">Trayectoria y compromiso</h3>
+          <p class="muted">Con años de experiencia en el mercado, ofrecemos un servicio integral que cubre desde la compra hasta la entrega al cliente final. Nuestro equipo está formado por especialistas en logística, atención al cliente y control de calidad.</p>
+          <ul class="muted small">
+            <li>✅ Gestión de pedidos y trazabilidad.</li>
+            <li>✅ Almacenamiento seguro con inventario controlado.</li>
+            <li>✅ Atención personalizada para empresas.</li>
+          </ul>
+        </div>
+
+        <div style="flex:1;min-width:280px" data-aos="fade-left">
+          <div class="timeline">
+            <div class="step">
+              <strong>Año 2015</strong>
+              <div class="small muted">Inicio de operaciones con enfoque local.</div>
+            </div>
+            <div class="step">
+              <strong>Año 2018</strong>
+              <div class="small muted">Expansión a logística nacional.</div>
+            </div>
+            <div class="step">
+              <strong>Año 2022</strong>
+              <div class="small muted">Implementación de control de inventario digital.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section container">
+      <h2 class="section-title">Testimonios</h2>
+      <div class="testimonials" data-aos="zoom-in">
+        <div id="testimonialsInner">
+          <div class="testimonial" data-index="0">
+            <div class="avatar">MC</div>
+            <div>
+              <div style="font-weight:700">María C. — Compradora</div>
+              <div class="quote muted">"Excelente servicio y entrega puntual. El seguimiento fue claro y resolvieron todas nuestras dudas."</div>
+            </div>
+          </div>
+          <div class="testimonial" data-index="1" style="display:none">
+            <div class="avatar">JP</div>
+            <div>
+              <div style="font-weight:700">Javier P. — Retail</div>
+              <div class="quote muted">"Buena comunicación y tarifas competitivas. Recomendados para cadenas y distribuidores."</div>
+            </div>
+          </div>
+          <div class="testimonial" data-index="2" style="display:none">
+            <div class="avatar">LR</div>
+            <div>
+              <div style="font-weight:700">Laura R. — Industria</div>
+              <div class="quote muted">"Profesionales y responsables. Nos ayudaron a optimizar tiempos de entrega."</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BAND (COTIZACIONES) -->
+    <section class="section container">
+      <div class="cta-band" data-aos="fade-up">
+        <div>
+          <h3>¿Listo para cotizar?</h3>
+          <div class="small muted">Solicita una cotización personalizada en minutos — respuesta rápida.</div>
+        </div>
+        <div style="display:flex;gap:12px;align-items:center">
+          <a href="cotizaciones.html" class="btn-primary">Solicitar cotización</a>
+          <a href="mailto:contacto@comercializadora.com" class="btn-outline">Escríbenos</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:flex-start">
+      <div style="flex:1;min-width:220px">
+        <a href="index.html" style="text-decoration:none;color:inherit;display:flex;gap:12px;align-items:center">
+          <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#fff"/><path d="M18 40 L30 22 L46 40" fill="none" stroke="#37578a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div>
+            <strong>Provelia</strong>
+            <div class="small muted">Distribución y soluciones</div>
+          </div>
+        </a>
+        <p class="muted small" style="margin-top:12px">Dirección ficticia • Ciudad • País<br>Tel: +52 81 0000 0000 • contacto@comercializadora.com</p>
+      </div>
+
+      <div style="flex:1;min-width:160px">
+        <h4>Enlaces</h4>
+        <ul style="list-style:none;padding:0;margin:0">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="cotizaciones.html">Cotizaciones</a></li>
+        </ul>
+      </div>
+
+      <div style="flex:1;min-width:200px">
+        <!-- Espacio en blanco donde estaba Suscríbete -->
+      </div>
+
+    </div>
+
+    <div style="margin-top:20px;border-top:1px solid rgba(255,255,255,0.06);padding-top:16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+      <div class="muted small">© "Provelia" — Todos los derechos reservados</div>
+      <div class="social">
+        <a href="#" style="color:#fff;text-decoration:none" aria-label="LinkedIn">in</a>
+        <a href="#" style="color:#fff;text-decoration:none" aria-label="Facebook">fb</a>
+        <a href="#" style="color:#fff;text-decoration:none" aria-label="Instagram">ig</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <!-- FLOATING WHATSAPP -->
+  <a class="whatsapp" href="https://wa.me/521XXXXXXXXXX" target="_blank" aria-label="Chatear por WhatsApp">💬</a>
+
+  <button class="to-top" id="toTop" aria-label="Volver arriba">↑</button>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYkQ5P0e2r3cKkF0a6bZ1Y7sQX0r2u6Qqf5FQj7QmG6s8z9x1H3mO9q+2wW0kP4t1xF0m3Kp1G6rJQm3G8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    // PRELOADER
+    window.addEventListener('load', function(){
+      const pre = document.getElementById('preloader');
+      if(pre){ pre.style.opacity = '0'; setTimeout(()=>pre.remove(),600); }
+    });
+
+    // AOS init
+    if(window.AOS) AOS.init({once:true,duration:700,easing:'ease-out-cubic'});
+
+    // MOBILE MENU TOGGLE
+    const menuToggle = document.getElementById('menuToggle');
+    const mainMenu = document.getElementById('mainMenu');
+    menuToggle && menuToggle.addEventListener('click', ()=>{ mainMenu.classList.toggle('open'); });
+
+    // SMOOTH SCROLL for anchors
+    document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+      anchor.addEventListener('click', function(e){
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if(target) target.scrollIntoView({behavior:'smooth'});
+      });
+    });
+
+    // TESTIMONIALS ROTATION
+    (function(){
+      const items = document.querySelectorAll('#testimonialsInner .testimonial');
+      let idx = 0;
+      function show(i){ items.forEach((it,s)=>it.style.display = (s===i)?'flex':'none'); }
+      if(items.length>0){ show(0); setInterval(()=>{ idx=(idx+1)%items.length; show(idx); },4500); }
+    })();
+
+    // NEWSLETTER FORM (simulated)
+    const newsletterForm = document.getElementById('newsletterForm');
+    newsletterForm && newsletterForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      const email = document.getElementById('newsletterEmail').value.trim();
+      if(!email) return alert('Ingresa un correo válido.');
+      // aquí podrías conectar con tu API o servicio (Formspree, Mailchimp, etc.)
+      alert('Gracias — te hemos suscrito con: ' + email);
+      newsletterForm.reset();
+    });
+
+    // COTIZACIÓN FORM (si hubiera uno real) podrías crear función que arme mailto con detalles
+
+    // BACK TO TOP
+    const toTop = document.getElementById('toTop');
+    window.addEventListener('scroll', ()=>{
+      if(window.scrollY > 400) toTop.style.display = 'block'; else toTop.style.display = 'none';
+    });
+    toTop.addEventListener('click', ()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+  </script>
+
+  <!-- Structured Data (Organization) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Comercializadora",
+    "url": "https://tusitio.com",
+    "logo": "https://tusitio.com/logo.png",
+    "sameAs": [
+      "https://www.facebook.com/",
+      "https://www.linkedin.com/"
+    ],
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "telephone": "+52 81 0000 0000",
+      "contactType": "customer service",
+      "areaServed": "MX",
+      "availableLanguage": ["Spanish","English"]
+    }]
+  }
+  </script>
+
+</body>
+</html>
